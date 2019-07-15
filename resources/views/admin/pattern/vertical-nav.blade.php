@@ -4,27 +4,27 @@
     <div class="nicescroll-bar">
         <div class="navbar-nav-wrap">
             <ul class="navbar-nav flex-column">
-                <li class="nav-item active">
+                <li class="nav-item @if(\Route::currentRouteName() == 'admin.dashboard') active @endif">
                     <a class="nav-link" href="{{ route('admin.dashboard') }}">
                         <span class="feather-icon"><i data-feather="activity"></i></span>
                         <span class="nav-link-text">Панель управление</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @if(\Route::currentRouteName() == 'admin.category.index') active @endif">
                     <a class="nav-link link-with-badge" href="{{ route('admin.category.index') }}">
                         <span class="feather-icon"><i data-feather="package"></i></span>
                         <span class="nav-link-text">Категория</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item @if(\Route::currentRouteName() == 'admin.page.index') active @endif">
                     <a class="nav-link" href="{{ route('admin.page.index') }}">
                         <span class="feather-icon"><i data-feather="file-text"></i></span>
                         <span class="nav-link-text">Страницы</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item @if(\Route::currentRouteName() == 'admin.product.index') active @endif">
                     <a class="nav-link" href="{{ route('admin.product.index') }}">
                         <span class="feather-icon"><i data-feather="file-text"></i></span>
                         <span class="nav-link-text">Товары</span>
