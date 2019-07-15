@@ -28,4 +28,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['web
     Route::get('/products/{product}/edit', 'ProductController@edit')->name('admin.product.edit');
     Route::post('/products/{product}', 'ProductController@update')->name('admin.product.update');
     Route::get('/products/{product}/destroy', 'ProductController@destroy')->name('admin.product.destroy');
+
+    # Orders
+    Route::get('/orders', 'OrderController@index')->name('admin.order.index');
 });

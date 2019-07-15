@@ -31,6 +31,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item @if(\Route::currentRouteName() == 'admin.order.index') active @endif">
+                    <a class="nav-link" href="{{ route('admin.order.index') }}">
+                        <span class="feather-icon"><i data-feather="file-text"></i></span>
+                        <span class="nav-link-text">Заказы</span>
+                    </a>
+                </li>
+
                 {{--<li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#auth_drp">
                         <span class="feather-icon"><i data-feather="zap"></i></span>
