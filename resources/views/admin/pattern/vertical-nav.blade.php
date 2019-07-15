@@ -31,7 +31,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                {{--<li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#auth_drp">
                         <span class="feather-icon"><i data-feather="zap"></i></span>
                         <span class="nav-link-text">Authentication</span>
@@ -102,9 +102,10 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li>--}}
             </ul>
-            <hr class="nav-separator">
+
+            {{--<hr class="nav-separator">
             <div class="nav-header">
                 <span>User Interface</span>
                 <span>UI</span>
@@ -364,7 +365,7 @@
                         <span class="nav-link-text">Support</span>
                     </a>
                 </li>
-            </ul>
+            </ul>--}}
         </div>
     </div>
 </nav>

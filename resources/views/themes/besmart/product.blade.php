@@ -9,40 +9,9 @@
             <hr>
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="tabs">
-                        <li>
-                            <input type="radio" name="tabs" id="tab-1" checked>
-                            <label for="tab-1">Описание</label>
-                            <div class="tab-content">
-                                {!! $product->full_description !!}
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" name="tabs" id="tab-2">
-                            <label for="tab-2">Характеристики</label>
-                            <div class="tab-content">
-                                Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" name="tabs" id="tab-3">
-                            <label for="tab-3">Информация для заказа</label>
-                            <div class="tab-content">
-                                Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" name="tabs" id="tab-4">
-                            <label for="tab-4">Отзывы о товаре</label>
-                            <div class="tab-content">
-                                Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                        </li>
-                    </ul>
+                    <div>
+                        {!! $product->full_description !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,6 +28,12 @@
 
                 <div class="left-product-buy">
                     <a href="{{ route('cart.add', ['product_id' => $product->id]) }}" class="btn btn-danger">Купить</a>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <a href="https://api.whatsapp.com/send?phone=7777941654&text=Здравствуйте!%20Я%20хотел%20бы%20узнать%20по%20подробнее%20о товаре%20!.%20Спасибо!%20Артикуль товара:%20{{ $product->id }}%20Товар%20по%20этому%20адресу:%20{{ $product->url() }}">
+                        <img width="200" src="{{ asset('img/whatsapp_btn.png') }}" alt="">
+                    </a>
                 </div>
             </div>
         </div>

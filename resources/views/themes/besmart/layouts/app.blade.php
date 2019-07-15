@@ -96,7 +96,7 @@
                 </div>
                 @endif
 
-                <div id="main">
+                <div id="main" style="width: 100%;">
                     <div id="content" class="left" style="padding-bottom: 20px;">
                         @yield('content')
                     </div>
