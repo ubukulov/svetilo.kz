@@ -37,7 +37,7 @@
                                         @else
                                             <td>Нет</td>
                                         @endif
-                                        <td>
+                                        <td style="width: 270px;">
                                             <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}" class="btn btn-blue"><i class="fa fa-edit"></i>&nbsp; Редак.</a>
                                             <a href="{{ route('admin.product.destroy', ['id' => $product->id]) }}" class="btn btn-danger"><i class="fa fa-remove"></i>&nbsp; Удалить</a>
                                         </td>
