@@ -77,8 +77,12 @@
                             <!-- Row -->
                             <span>Картинки</span>
                             <div class="row">
-                                <div class="col-xl-12">
-                                    <input type="file" required class="form-control" name="images[]" multiple/>
+                                <div class="col-xl-6">
+                                    <input type="file" class="form-control" name="images[]" multiple/>
+                                </div>
+                                
+                                <div class="col-xl-6">
+                                    <img src="{{ $product->image() }}" alt="">
                                 </div>
                             </div>
 

@@ -112,7 +112,45 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('images');
+        $product = Product::find($id);
+        if ($request->hasFile('images')) {
+            $images = [];
+
+            foreach($request->file('images') as $file) {
+                $img = \Image::make($file->getPathname());
+                $hash_name = md5($file->getClientOriginalName());
+                $file_name = $product->id."_".$hash_name.'.jpg';
+                $dir = substr($hash_name,0,2).'/'.substr($hash_name, 2, 2);
+
+                $save_path = base_path('public/'.$this->imagePath.$dir);
+                if (!file_exists($save_path)) {
+                    mkdir($save_path, 777, true);
+                }
+
+                $img->save($save_path.'/'.$file_name);
+
+                // сохранение миниатюры
+
+                $save_path_thumbs = base_path('public/'.$this->imagePathThumbs.$dir);
+
+                if (!file_exists($save_path_thumbs)) {
+                    mkdir($save_path_thumbs, 777, true);
+                }
+
+                $img->resize(180, 180)->save($save_path_thumbs.'/'.$file_name);
+
+                $images[] = $dir.'/'.$file_name;
+            }
+
+            $product->images = json_encode($images);
+            $product->save();
+        } else {
+            $product->update($data);
+            $product->save();
+        }
+
+        return redirect()->route('admin.product.index');
     }
 
     /**
