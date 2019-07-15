@@ -1,6 +1,9 @@
 <?php
+# Login
+Route::get('/admin/login', 'Admin\AuthController@login')->name('admin.login');
+Route::post('/admin/login', 'Admin\AuthController@authenticate')->name('admin.authenticate');
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['web', 'admin']], function() {
     Route::get('/', 'AdminController@dashboard');
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('/category', 'CategoryController@index')->name('admin.category.index');
