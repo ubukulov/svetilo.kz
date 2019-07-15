@@ -9,6 +9,7 @@
                     <div class="col-sm">
                         <form action="{{ route('admin.product.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -82,7 +83,7 @@
                                 </div>
                                 
                                 <div class="col-xl-6">
-                                    <img src="{{ $product->image() }}" alt="">
+                                    <img width="150" src="{{ $product->image() }}" alt="">
                                 </div>
                             </div>
 
