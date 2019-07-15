@@ -19,13 +19,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/page/{id}/destroy', 'PageController@destroy')->name('admin.page.destroy');
 
     # Products
-    Route::resource('products', 'ProductController')->names([
-        'index' => 'admin.product.index',
-        'create' => 'admin.product.create',
-        'store' => 'admin.product.store',
-        'edit' => 'admin.product.edit',
-        'update' => 'admin.product.update',
-        'destroy' => 'admin.product.destroy',
-        'show' => 'admin.product.show',
-    ]);
+    Route::get('/products', 'ProductController@index')->name('admin.product.index');
+    Route::get('/products/create', 'ProductController@create')->name('admin.product.create');
+    Route::post('/products', 'ProductController@store')->name('admin.product.store');
+    Route::get('/products/{product}/edit', 'ProductController@edit')->name('admin.product.edit');
+    Route::post('/products/{product}', 'ProductController@update')->name('admin.product.update');
+    Route::get('/products/{product}/destroy', 'ProductController@destroy')->name('admin.product.destroy');
 });
