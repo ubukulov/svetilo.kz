@@ -42,11 +42,11 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="container">
-                    <div class="catalog">
-                        <div class="catalog-title">Каталог товаров</div>
+                    <div class="catalog" style="background: #f8f8f8;">
+                        <div class="catalog-title" style="font-size: 20px;">Категории</div>
                         <hr>
                         <div>
-                            <ul class="catalog-list">
+                            <ul class="catalog-list" style="font-size: 16px;">
                                 @foreach($cats as $cat)
                                     <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
                                 @endforeach
