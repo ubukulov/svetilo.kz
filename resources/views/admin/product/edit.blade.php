@@ -1,12 +1,14 @@
-@extends('admin.layouts.admin')
+@extends('admin.layouts.admin_lte')
 @section('content')
+    <div class="box box-default">
+        <div class="box-body">
     <!-- Row -->
     <div class="row">
-        <div class="col-xl-12">
+        <div class="col-md-12">
             <section class="hk-sec-wrapper">
                 <h5 class="hk-sec-title">Форма редактирование товара</h5>
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-12">
                         <form action="{{ route('admin.product.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="_method" value="PUT">
@@ -78,11 +80,11 @@
                             <!-- Row -->
                             <span>Картинки</span>
                             <div class="row">
-                                <div class="col-xl-6">
+                                <div class="col-md-6">
                                     <input type="file" class="form-control" name="images[]" multiple/>
                                 </div>
                                 
-                                <div class="col-xl-6">
+                                <div class="col-md-6">
                                     <img width="150" src="{{ $product->image() }}" alt="">
                                 </div>
                             </div>
@@ -98,7 +100,7 @@
 
                             <div class="form-group">
                                 <label for="full_description">Полное описание</label>
-                                <textarea class="form-control tinymce" name="full_description" id="full_description" cols="30" rows="2">
+                                <textarea class="form-control tinymce" name="full_description" id="editor1" cols="30" rows="2">
                                 {!! $product->full_description !!}
                                 </textarea>
                             </div>
@@ -111,4 +113,6 @@
             </section>
         </div>
     </div>
+        </div>
+        </div>
 @stop

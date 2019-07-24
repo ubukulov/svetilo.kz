@@ -1,20 +1,22 @@
-@extends('admin.layouts.admin')
+@extends('admin.layouts.admin_lte')
 @section('content')
+    <div class="box box-default">
+        <div class="box-body">
     <!-- Row -->
     <div class="row">
-        <div class="col-xl-12">
+        <div class="col-md-12">
             <section class="hk-sec-wrapper">
                 <div class="row">
-                    <div class="col-xl-6">
+                    <div class="col-md-6">
                         <h5 class="hk-sec-title">Список заказы</h5>
                     </div>
-                    <div class="col-xl-6">
+                    <div class="col-md-6">
 
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-12">
                         <div class="table-wrap">
                             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                 <thead>
@@ -42,4 +44,6 @@
             </section>
         </div>
     </div>
+        </div>
+        </div>
 @stop

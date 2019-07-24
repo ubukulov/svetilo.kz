@@ -1,12 +1,14 @@
-@extends('admin.layouts.admin')
+@extends('admin.layouts.admin_lte')
 @section('content')
+    <div class="box box-default">
+        <div class="box-body">
     <!-- Row -->
     <div class="row">
-        <div class="col-xl-12">
+        <div class="col-md-12">
             <section class="hk-sec-wrapper">
                 <h5 class="hk-sec-title">Форма редактирование категорию</h5>
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-12">
                         <form action="{{ route('admin.category.update', ['id' => $category->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -54,4 +56,6 @@
             </section>
         </div>
     </div>
+        </div>
+        </div>
 @stop

@@ -15,8 +15,8 @@ License: You must have a valid license purchased only from templatemonster to le
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+{{--    <link rel="shortcut icon" href="favicon.ico">--}}
+{{--    <link rel="icon" href="favicon.ico" type="image/x-icon">--}}
 
     <!-- vector map CSS -->
     <link href="{{ asset('themes/mintos/vendors/vectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />
@@ -49,7 +49,7 @@ License: You must have a valid license purchased only from templatemonster to le
 <div class="hk-wrapper hk-vertical-nav">
 
     <!-- Top Navbar -->
-    <nav class="navbar navbar-expand-xl navbar-dark fixed-top hk-navbar">
+    <nav class="navbar navbar-expand-xl navbar-dark hk-navbar">
         <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="menu"></i></span></a>
         <a class="navbar-brand" href="dashboard1.html">
             <img class="brand-img d-inline-block" src="{{ asset('themes/mintos/dist/img/logo-dark.png') }}" alt="brand" />
@@ -188,13 +188,13 @@ License: You must have a valid license purchased only from templatemonster to le
             </li>
         </ul>
     </nav>
-    <form role="search" class="navbar-search">
+    {{--<form role="search" class="navbar-search">
         <div class="position-relative">
             <a href="javascript:void(0);" class="navbar-search-icon"><span class="feather-icon"><i data-feather="search"></i></span></a>
             <input type="text" name="example-input1-group2" class="form-control" placeholder="Type here to Search">
             <a id="navbar_search_close" class="navbar-search-close" href="#"><span class="feather-icon"><i data-feather="x"></i></span></a>
         </div>
-    </form>
+    </form>--}}
     <!-- /Top Navbar -->
 
     @include('admin.pattern.vertical-nav')
@@ -204,7 +204,7 @@ License: You must have a valid license purchased only from templatemonster to le
         <div class="nicescroll-bar position-relative">
             <div class="settings-panel-wrap">
                 <div class="settings-panel-head">
-                    <img class="brand-img d-inline-block align-top" src="{{ asset('themes/mintos/dist/img/logo-light.png') }}" alt="brand" />
+                    <img class="brand-img d-inline-block align-top" src="/themes/mintos/dist/img/logo-light.png" alt="brand" />
                     <a href="javascript:void(0);" id="settings_panel_close" class="settings-panel-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
                 </div>
                 <hr>
@@ -256,8 +256,8 @@ License: You must have a valid license purchased only from templatemonster to le
                 <button id="reset_settings" class="btn btn-primary btn-block btn-reset mt-30">Reset</button>
             </div>
         </div>
-        <img class="d-none" src="dist/img/logo-light.png" alt="brand" />
-        <img class="d-none" src="dist/img/logo-dark.png" alt="brand" />
+        <img class="d-none" src="/themes/mintos/dist/img/logo-light.png" alt="brand" />
+        <img class="d-none" src="/themes/mintos/dist/img/logo-dark.png" alt="brand" />
     </div>
     <!-- /Setting Panel -->
 
@@ -305,15 +305,6 @@ License: You must have a valid license purchased only from templatemonster to le
 <!-- Fancy Dropdown JS -->
 <script src="{{ asset('themes/mintos/dist/js/dropdown-bootstrap-extended.js') }}"></script>
 
-<!-- Dropzone JavaScript -->
-<script src="{{ asset('themes/mintos/vendors/dropzone/dist/dropzone.js') }}"></script>
-
-<!-- Dropify JavaScript -->
-<script src="{{ asset('themes/mintos/vendors/dropify/dist/js/dropify.min.js') }}"></script>
-
-<!-- Form Flie Upload Data JavaScript -->
-<script src="{{ asset('themes/mintos/dist/js/form-file-upload-data.js') }}"></script>
-
 <!-- FeatherIcons JavaScript -->
 <script src="{{ asset('themes/mintos/dist/js/feather.min.js') }}"></script>
 
@@ -346,6 +337,15 @@ License: You must have a valid license purchased only from templatemonster to le
 <!-- Toastr JS -->
 <script src="{{ asset('themes/mintos/vendors/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
 
+<!-- Dropzone JavaScript -->
+<script src="{{ asset('themes/mintos/vendors/dropzone/dist/dropzone.js') }}"></script>
+
+<!-- Dropify JavaScript -->
+<script src="{{ asset('themes/mintos/vendors/dropify/dist/js/dropify.min.js') }}"></script>
+
+<!-- Form Flie Upload Data JavaScript -->
+<script src="{{ asset('themes/mintos/dist/js/form-file-upload-data.js') }}"></script>
+
 <!-- Tinymce JavaScript -->
 <script src="{{ asset('themes/mintos/vendors/tinymce/tinymce.min.js') }}"></script>
 
@@ -355,7 +355,6 @@ License: You must have a valid license purchased only from templatemonster to le
 <!-- Init JavaScript -->
 <script src="{{ asset('themes/mintos/dist/js/init.js') }}"></script>
 <script src="{{ asset('themes/mintos/dist/js/dashboard-data.js') }}"></script>
-
 </body>
 
 </html>

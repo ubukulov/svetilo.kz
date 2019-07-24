@@ -1,12 +1,14 @@
-@extends('admin.layouts.admin')
+@extends('admin.layouts.admin_lte')
 @section('content')
+    <div class="box box-default">
+        <div class="box-body">
     <!-- Row -->
     <div class="row">
-        <div class="col-xl-12">
+        <div class="col-md-12">
             <section class="hk-sec-wrapper">
                 <h5 class="hk-sec-title">Форма добавление товара</h5>
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-12">
                         <form action="{{ route('admin.product.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -77,7 +79,7 @@
                             <!-- Row -->
                             <span>Картинки</span>
                             <div class="row">
-                                <div class="col-xl-12">
+                                <div class="col-md-12">
                                     <input type="file" required class="form-control" name="images[]" multiple/>
                                 </div>
                             </div>
@@ -93,7 +95,7 @@
 
                             <div class="form-group">
                                 <label for="full_description">Полное описание</label>
-                                <textarea class="form-control tinymce" name="full_description" id="full_description" cols="30" rows="2">
+                                <textarea class="form-control tinymce" name="full_description" id="editor1" cols="30" rows="2">
 
                                 </textarea>
                             </div>
@@ -106,4 +108,6 @@
             </section>
         </div>
     </div>
+        </div>
+        </div>
 @stop

@@ -1,113 +1,98 @@
 <!DOCTYPE html>
-<!--
-Template Name: Mintos - Responsive Bootstrap 4 Admin Dashboard Template
-Author: Hencework
-Contact: https://hencework.ticksy.com/
-
-License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
--->
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Mintos - SHARED ON THEMELOCK.COM  I Login</title>
-    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/themes/admin_lte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/themes/admin_lte/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/themes/admin_lte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/themes/admin_lte/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/themes/admin_lte/plugins/iCheck/square/blue.css">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <!-- Toggles CSS -->
-    <link href="/themes/mintos/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
-    <link href="/themes/mintos/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom CSS -->
-    <link href="/themes/mintos/dist/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body>
-<!-- Preloader -->
-<div class="preloader-it">
-    <div class="loader-pendulums"></div>
-</div>
-<!-- /Preloader -->
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="../../index2.html"><b>Admin</b>LTE</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
 
-<!-- HK Wrapper -->
-<div class="hk-wrapper">
-
-    <!-- Main Content -->
-    <div class="hk-pg-wrapper hk-auth-wrapper">
-        <header class="d-flex justify-content-end align-items-center">
-            <div class="btn-group btn-group-sm">
-                <a href="#" class="btn btn-outline-secondary">Help</a>
-                <a href="#" class="btn btn-outline-secondary">About Us</a>
+        <form action="{{ route('admin.authenticate') }}" method="post">
+            @csrf
+            <div class="form-group has-feedback">
+                <input type="email" name="email" required class="form-control" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-        </header>
-        <div class="container-fluid">
+            <div class="form-group has-feedback">
+                <input type="password" name="password" required class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
             <div class="row">
-                <div class="col-xl-12 pa-0">
-                    <div class="auth-form-wrap pt-xl-0 pt-70">
-                        <div class="auth-form w-xl-30 w-lg-55 w-sm-75 w-100">
-                            <a class="auth-brand text-center d-block mb-20" href="#">
-                                <img class="brand-img" src="/themes/mintos/dist/img/logo-light.png" alt="brand"/>
-                            </a>
-                            <form action="{{ route('admin.authenticate') }}" method="post">
-                                @csrf
-                                <h1 class="display-4 text-center mb-10">Welcome Back :)</h1>
-                                <p class="text-center mb-30">Sign in to your account and enjoy unlimited perks.</p>
-                                <div class="form-group">
-                                    <input class="form-control" name="email" required placeholder="Email" type="email">
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input class="form-control" name="password" required placeholder="Пароль" type="password">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><span class="feather-icon"><i data-feather="eye-off"></i></span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-control custom-checkbox mb-25">
-                                    <input class="custom-control-input" id="same-address" type="checkbox" checked>
-                                    <label class="custom-control-label font-14" for="same-address">Запомнить меня</label>
-                                </div>
-                                <button class="btn btn-primary btn-block" type="submit">Вход</button>
-                                {{--<p class="font-14 text-center mt-15">Having trouble logging in?</p>
-                                <div class="option-sep">or</div>
-                                <div class="form-row">
-                                    <div class="col-sm-6 mb-20"><button class="btn btn-indigo btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-facebook"></i> </span><span class="btn-text">Login with facebook</span></button></div>
-                                    <div class="col-sm-6 mb-20"><button class="btn btn-sky btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-twitter"></i> </span><span class="btn-text">Login with Twitter</span></button></div>
-                                </div>
-                                <p class="text-center">Do have an account yet? <a href="#">Sign Up</a></p>--}}
-                            </form>
-                        </div>
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>
                     </div>
                 </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Войти</button>
+                </div>
+                <!-- /.col -->
             </div>
+        </form>
+
+        <div class="social-auth-links text-center" style="display: none;">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+                Facebook</a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+                Google+</a>
         </div>
+        <!-- /.social-auth-links -->
+
+        <a href="#">I forgot my password</a><br>
+        <a href="register.html" class="text-center">Register a new membership</a>
+
     </div>
-    <!-- /Main Content -->
-
+    <!-- /.login-box-body -->
 </div>
-<!-- /HK Wrapper -->
+<!-- /.login-box -->
 
-<!-- JavaScript -->
-
-<!-- jQuery -->
-<script src="/themes/mintos/vendors/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/themes/mintos/vendors/popper.js/dist/umd/popper.min.js"></script>
-<script src="/themes/mintos/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Slimscroll JavaScript -->
-<script src="/themes/mintos/dist/js/jquery.slimscroll.js"></script>
-
-<!-- Fancy Dropdown JS -->
-<script src="/themes/mintos/dist/js/dropdown-bootstrap-extended.js"></script>
-
-<!-- FeatherIcons JavaScript -->
-<script src="/themes/mintos/dist/js/feather.min.js"></script>
-
-<!-- Init JavaScript -->
-<script src="/themes/mintos/dist/js/init.js"></script>
+<!-- jQuery 3 -->
+<script src="/themes/admin_lte/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/themes/admin_lte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="/themes/admin_lte/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });
+</script>
 </body>
 </html>

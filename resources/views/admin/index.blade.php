@@ -1,397 +1,502 @@
-@extends('admin.layouts.admin')
+@extends('admin.layouts.admin_lte')
 @section('content')
-    <!-- Title -->
-    <div class="hk-pg-header align-items-top">
-        <div>
-            <h2 class="hk-pg-title font-weight-600 mb-10">Customer Management</h2>
-            <p>Questions about onboarding lead data? <a href="#">Learn more.</a></p>
-        </div>
-        <div class="d-flex w-500p">
-            <select class="form-control custom-select custom-select-sm mr-15">
-                <option selected="">Latest Products</option>
-                <option value="1">CRM</option>
-                <option value="2">Projects</option>
-                <option value="3">Statistics</option>
-            </select>
-            <select class="form-control custom-select custom-select-sm mr-15">
-                <option selected="">USA</option>
-                <option value="1">USA</option>
-                <option value="2">India</option>
-                <option value="3">Australia</option>
-            </select>
-            <select class="form-control custom-select custom-select-sm">
-                <option selected="">December</option>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="1">April</option>
-                <option value="2">May</option>
-                <option value="3">June</option>
-                <option value="1">July</option>
-                <option value="2">August</option>
-                <option value="3">September</option>
-                <option value="1">October</option>
-                <option value="2">November</option>
-                <option value="3">December</option>
-            </select>
-        </div>
-    </div>
-    <!-- /Title -->
-
-    <!-- Row -->
+    <!-- Small boxes (Stat box) -->
     <div class="row">
-        <div class="col-xl-12">
-            <div class="hk-row">
-                <div class="col-sm-12">
-                    <div class="card-group hk-dash-type-2">
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-5">
-                                    <div>
-                                        <span class="d-block font-15 text-dark font-weight-500">Users</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-success font-14 font-weight-500">+10%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="d-block display-4 text-dark mb-5">168M</span>
-                                    <small class="d-block">172,458 Target Users</small>
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>150</h3>
 
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-5">
-                                    <div>
-                                        <span class="d-block font-15 text-dark font-weight-500">Campaign Leads</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-success font-14 font-weight-500">+12.5%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">168,856</span></span>
-                                    <small class="d-block">472,458 Targeted</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-5">
-                                    <div>
-                                        <span class="d-block font-15 text-dark font-weight-500">New Contacts</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-warning font-14 font-weight-500">-2.8%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="d-block display-4 text-dark mb-5">73</span>
-                                    <small class="d-block">100 Targeted</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-5">
-                                    <div>
-                                        <span class="d-block font-15 text-dark font-weight-500">Win/Loss Ratio</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-danger font-14 font-weight-500">-75%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="d-block display-4 text-dark mb-5">48:65</span>
-                                    <small class="d-block">42:32 Targeted</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p>New Orders</p>
                 </div>
-            </div>
-            <div class="hk-row">
-                <div class="col-lg-6">
-                    <div class="card card-refresh">
-                        <div class="refresh-container">
-                            <div class="loader-pendulums"></div>
-                        </div>
-                        <div class="card-header card-header-action">
-                            <h6>Youtube Subscribers</h6>
-                            <div class="d-flex align-items-center card-action-wrap">
-                                <a href="#" class="inline-block refresh mr-15">
-                                    <i class="ion ion-md-radio-button-off"></i>
-                                </a>
-                                <div class="inline-block dropdown">
-                                    <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-md-more"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="hk-legend-wrap mb-20">
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-neon rounded-circle d-inline-block"></span><span>Desktop</span>
-                                </div>
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-neon-light-1 rounded-circle d-inline-block"></span><span>Mobile</span>
-                                </div>
-                            </div>
-                            <div id="area_chart" style="height: 240px;"></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header card-header-action">
-                            <h6>Country Stats</h6>
-                            <div class="d-flex align-items-center card-action-wrap">
-                                <a href="#" class="inline-block refresh mr-15">
-                                    <i class="ion ion-md-arrow-down"></i>
-                                </a>
-                                <a href="#" class="inline-block full-screen">
-                                    <i class="ion ion-md-expand"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body pa-0">
-                            <div class="pa-20">
-                                <div id="world_map_marker_1" style="height: 300px"></div>
-                            </div>
-                            <div class="table-wrap">
-                                <div class="table-responsive">
-                                    <table class="table table-sm table-hover mb-0">
-                                        <thead>
-                                        <tr>
-                                            <th class="w-25">Country</th>
-                                            <th>Sessions</th>
-                                            <th>Goals</th>
-                                            <th>Goals Rate</th>
-                                            <th>Bounce Rate</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Canada</td>
-                                            <td>55,555</td>
-                                            <td>210</td>
-                                            <td>2.46%</td>
-                                            <td>0.26%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>India</td>
-                                            <td>24,152</td>
-                                            <td>135</td>
-                                            <td>0.58%</td>
-                                            <td>0.43%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>UK</td>
-                                            <td>15,640</td>
-                                            <td>324</td>
-                                            <td>5.15%</td>
-                                            <td>2.47%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Botswana</td>
-                                            <td>12,148</td>
-                                            <td>854</td>
-                                            <td>4.19%</td>
-                                            <td>0.1%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>UAE</td>
-                                            <td>11,258</td>
-                                            <td>453</td>
-                                            <td>8.15%</td>
-                                            <td>0.14%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Australia</td>
-                                            <td>10,786</td>
-                                            <td>376</td>
-                                            <td>5.48%</td>
-                                            <td>0.45%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Phillipines</td>
-                                            <td>9,485</td>
-                                            <td>63</td>
-                                            <td>3.51%</td>
-                                            <td>0.9%</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header card-header-action">
-                            <h6>Linkedin Key Metrics</h6>
-                            <div class="d-flex align-items-center card-action-wrap">
-                                <a href="#" class="inline-block refresh mr-15">
-                                    <i class="ion ion-md-arrow-down"></i>
-                                </a>
-                                <a href="#" class="inline-block full-screen mr-15">
-                                    <i class="ion ion-md-expand"></i>
-                                </a>
-                                <a class="inline-block card-close" href="#" data-effect="fadeOut">
-                                    <i class="ion ion-md-close"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body pa-0">
-                            <div class="table-wrap">
-                                <div class="table-responsive">
-                                    <table class="table table-sm table-hover mb-0">
-                                        <thead>
-                                        <tr>
-                                            <th>Metrics</th>
-                                            <th class="w-40">Period</th>
-                                            <th class="w-25">Past</th>
-                                            <th>Trend</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Clicks</td>
-                                            <td>
-                                                <div class="progress-wrap lb-side-left mnw-125p">
-                                                    <div class="progress-lb-wrap">
-                                                        <label class="progress-label mnw-50p">1,184</label>
-                                                        <div class="progress progress-bar-rounded progress-bar-xs">
-                                                            <div class="progress-bar bg-primary w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>1,234</td>
-                                            <td><div id="sparkline_1"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Visits</td>
-                                            <td>
-                                                <div class="progress-wrap lb-side-left mnw-125p">
-                                                    <div class="progress-lb-wrap">
-                                                        <label class="progress-label mnw-50p">1,425</label>
-                                                        <div class="progress progress-bar-rounded progress-bar-xs">
-                                                            <div class="progress-bar bg-neon-light-3 w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>3,458</td>
-                                            <td><div id="sparkline_2"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Views</td>
-                                            <td>
-                                                <div class="progress-wrap lb-side-left mnw-125p">
-                                                    <div class="progress-lb-wrap">
-                                                        <label class="progress-label mnw-50p">5,623</label>
-                                                        <div class="progress progress-bar-rounded progress-bar-xs">
-                                                            <div class="progress-bar bg-neon-light-4 w-60" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>53,637</td>
-                                            <td><div id="sparkline_3"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Returns</td>
-                                            <td>
-                                                <div class="progress-wrap lb-side-left mnw-125p">
-                                                    <div class="progress-lb-wrap">
-                                                        <label class="progress-label mnw-50p">4,851</label>
-                                                        <div class="progress progress-bar-rounded progress-bar-xs">
-                                                            <div class="progress-bar bg-neon-light-1 w-55" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>20,596</td>
-                                            <td><div id="sparkline_4"></div></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header card-header-action">
-                            <h6>Users by Gendar & Age</h6>
-                            <div class="d-flex align-items-center card-action-wrap">
-                                <div class="inline-block dropdown">
-                                    <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div id="m_chart_4" style="height:250px;"></div>
-                            <div class="hk-legend-wrap mt-20">
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-primary rounded-circle d-inline-block"></span><span>18-24</span>
-                                </div>
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-neon-light-1 rounded-circle d-inline-block"></span><span>25-34</span>
-                                </div>
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-neon-light-2 rounded-circle d-inline-block"></span><span>35-44</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header card-header-action">
-                            <h6>Analytics Audience Matrics</h6>
-                            <div class="d-flex align-items-center card-action-wrap">
-                                <div class="inline-block dropdown">
-                                    <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="hk-legend-wrap mb-20">
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-primary rounded-circle d-inline-block"></span><span>Users</span>
-                                </div>
-                                <div class="hk-legend">
-                                    <span class="d-10 bg-neon-light-1 rounded-circle d-inline-block"></span><span>Sessions</span>
-                                </div>
-                            </div>
-                            <div id="e_chart_6" class="echart" style="height:225px;"></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>Bounce Rate</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>44</h3>
+
+                    <p>User Registrations</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>65</h3>
+
+                    <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
     </div>
-    <!-- /Row -->
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="nav-tabs-custom">
+                <!-- Tabs within a box -->
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+                    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                </ul>
+                <div class="tab-content no-padding">
+                    <!-- Morris chart - Sales -->
+                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                </div>
+            </div>
+            <!-- /.nav-tabs-custom -->
+
+            <!-- Chat box -->
+            <div class="box box-success">
+                <div class="box-header">
+                    <i class="fa fa-comments-o"></i>
+
+                    <h3 class="box-title">Chat</h3>
+
+                    <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                        <div class="btn-group" data-toggle="btn-toggle">
+                            <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body chat" id="chat-box">
+                    <!-- chat item -->
+                    <div class="item">
+                        <img src="/themes/admin_lte/dist/img/user4-128x128.jpg" alt="user image" class="online">
+
+                        <p class="message">
+                            <a href="#" class="name">
+                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                                Mike Doe
+                            </a>
+                            I would like to meet you to discuss the latest news about
+                            the arrival of the new theme. They say it is going to be one the
+                            best themes on the market
+                        </p>
+                        <div class="attachment">
+                            <h4>Attachments:</h4>
+
+                            <p class="filename">
+                                Theme-thumbnail-image.jpg
+                            </p>
+
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>
+                            </div>
+                        </div>
+                        <!-- /.attachment -->
+                    </div>
+                    <!-- /.item -->
+                    <!-- chat item -->
+                    <div class="item">
+                        <img src="/themes/admin_lte/dist/img/user3-128x128.jpg" alt="user image" class="offline">
+
+                        <p class="message">
+                            <a href="#" class="name">
+                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                                Alexander Pierce
+                            </a>
+                            I would like to meet you to discuss the latest news about
+                            the arrival of the new theme. They say it is going to be one the
+                            best themes on the market
+                        </p>
+                    </div>
+                    <!-- /.item -->
+                    <!-- chat item -->
+                    <div class="item">
+                        <img src="/themes/admin_lte/dist/img/user2-160x160.jpg" alt="user image" class="offline">
+
+                        <p class="message">
+                            <a href="#" class="name">
+                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
+                                Susan Doe
+                            </a>
+                            I would like to meet you to discuss the latest news about
+                            the arrival of the new theme. They say it is going to be one the
+                            best themes on the market
+                        </p>
+                    </div>
+                    <!-- /.item -->
+                </div>
+                <!-- /.chat -->
+                <div class="box-footer">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Type message...">
+
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box (chat box) -->
+
+            <!-- TO DO List -->
+            <div class="box box-primary">
+                <div class="box-header">
+                    <i class="ion ion-clipboard"></i>
+
+                    <h3 class="box-title">To Do List</h3>
+
+                    <div class="box-tools pull-right">
+                        <ul class="pagination pagination-sm inline">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <!-- See /themes/admin_lte/dist/js/pages/dashboard.js to activate the todoList plugin -->
+                    <ul class="todo-list">
+                        <li>
+                            <!-- drag handle -->
+                            <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <!-- checkbox -->
+                            <input type="checkbox" value="">
+                            <!-- todo text -->
+                            <span class="text">Design a nice theme</span>
+                            <!-- Emphasis label -->
+                            <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                            <!-- General tools such as edit or delete-->
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <input type="checkbox" value="">
+                            <span class="text">Make the theme responsive</span>
+                            <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <input type="checkbox" value="">
+                            <span class="text">Let theme shine like a star</span>
+                            <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <input type="checkbox" value="">
+                            <span class="text">Let theme shine like a star</span>
+                            <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <input type="checkbox" value="">
+                            <span class="text">Check your messages and notifications</span>
+                            <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                            <input type="checkbox" value="">
+                            <span class="text">Let theme shine like a star</span>
+                            <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix no-border">
+                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <!-- quick email widget -->
+            <div class="box box-info">
+                <div class="box-header">
+                    <i class="fa fa-envelope"></i>
+
+                    <h3 class="box-title">Quick Email</h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <div class="box-body">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="emailto" placeholder="Email to:">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject">
+                        </div>
+                        <div>
+                  <textarea class="textarea" placeholder="Message"
+                            style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="box-footer clearfix">
+                    <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                        <i class="fa fa-arrow-circle-right"></i></button>
+                </div>
+            </div>
+
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5 connectedSortable">
+
+            <!-- Map box -->
+            <div class="box box-solid bg-light-blue-gradient">
+                <div class="box-header">
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip"
+                                title="Date range">
+                            <i class="fa fa-calendar"></i></button>
+                        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse"
+                                data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                            <i class="fa fa-minus"></i></button>
+                    </div>
+                    <!-- /. tools -->
+
+                    <i class="fa fa-map-marker"></i>
+
+                    <h3 class="box-title">
+                        Visitors
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <div id="world-map" style="height: 250px; width: 100%;"></div>
+                </div>
+                <!-- /.box-body-->
+                <div class="box-footer no-border">
+                    <div class="row">
+                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <div id="sparkline-1"></div>
+                            <div class="knob-label">Visitors</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <div id="sparkline-2"></div>
+                            <div class="knob-label">Online</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-xs-4 text-center">
+                            <div id="sparkline-3"></div>
+                            <div class="knob-label">Exists</div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <!-- solid sales graph -->
+            <div class="box box-solid bg-teal-gradient">
+                <div class="box-header">
+                    <i class="fa fa-th"></i>
+
+                    <h3 class="box-title">Sales Graph</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body border-radius-none">
+                    <div class="chart" id="line-chart" style="height: 250px;"></div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer no-border">
+                    <div class="row">
+                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="knob-label">Mail-Orders</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="knob-label">Online</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-xs-4 text-center">
+                            <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="knob-label">In-Store</div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+
+            <!-- Calendar -->
+            <div class="box box-solid bg-green-gradient">
+                <div class="box-header">
+                    <i class="fa fa-calendar"></i>
+
+                    <h3 class="box-title">Calendar</h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <!-- button with a dropdown -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bars"></i></button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Add new event</a></li>
+                                <li><a href="#">Clear events</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">View calendar</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <!--The calendar -->
+                    <div id="calendar" style="width: 100%"></div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer text-black">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Progress bars -->
+                            <div class="clearfix">
+                                <span class="pull-left">Task #1</span>
+                                <small class="pull-right">90%</small>
+                            </div>
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                            </div>
+
+                            <div class="clearfix">
+                                <span class="pull-left">Task #2</span>
+                                <small class="pull-right">70%</small>
+                            </div>
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <div class="clearfix">
+                                <span class="pull-left">Task #3</span>
+                                <small class="pull-right">60%</small>
+                            </div>
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
+                            </div>
+
+                            <div class="clearfix">
+                                <span class="pull-left">Task #4</span>
+                                <small class="pull-right">40%</small>
+                            </div>
+                            <div class="progress xs">
+                                <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+            <!-- /.box -->
+
+        </section>
+        <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
 @stop
