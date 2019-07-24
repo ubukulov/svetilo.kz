@@ -49,7 +49,18 @@
                         <div>
                             <ul class="catalog-list" style="font-size: 16px;">
                                 @foreach($cats as $cat)
-                                    <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
+                                    @if($cat->hasChildren())
+                                        <li>
+                                            <a href="{{ $cat->url() }}">{{ $cat->title }}</a>
+                                            <ul style="margin-left: 20px;">
+                                                @foreach($cat->children as $child)
+                                                    <li><a href="{{ $child->url() }}">{{ $child->title }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
+                                    @endif
                                 @endforeach
                             </ul>
                         </div>
