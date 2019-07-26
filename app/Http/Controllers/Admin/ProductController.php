@@ -54,7 +54,7 @@ class ProductController extends Controller
 
                 $save_path = base_path('public/'.$this->imagePath.$dir);
                 if (!file_exists($save_path)) {
-                    mkdir($save_path, 777, true);
+                    mkdir($save_path, 755, true);
                 }
 
                 $img->save($save_path.'/'.$file_name);
@@ -125,7 +125,7 @@ class ProductController extends Controller
 
                 $save_path = base_path('public/'.$this->imagePath.$dir);
                 if (!file_exists($save_path)) {
-                    mkdir($save_path, 777, true);
+                    mkdir($save_path, 755, true);
                 }
 
                 $img->save($save_path.'/'.$file_name);
