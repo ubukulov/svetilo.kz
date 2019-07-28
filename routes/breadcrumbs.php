@@ -7,7 +7,6 @@ Breadcrumbs::register('homepage', function ($breadcrumbs) {
 // Catalog
 Breadcrumbs::register('catalog.view', function ($breadcrumbs, $category) {
     $breadcrumbs->parent('homepage');
-
     $ancestors = null;
     if ($category != null) {
         $ancestors = \App\Models\Category::select(['id', 'title', 'alias', 'parent_id'])->defaultOrder()->ancestorsOf($category->id);

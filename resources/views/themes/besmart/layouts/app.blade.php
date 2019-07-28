@@ -41,34 +41,31 @@
         </div>
 
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="container">
-                    <div class="catalog" style="background: #f8f8f8;">
-                        <div class="catalog-title" style="font-size: 20px;">Категории</div>
-                        <hr>
-                        <div>
-                            <ul class="catalog-list" style="font-size: 16px;">
-                                @foreach($cats as $cat)
-                                    @if($cat->hasChildren())
-                                        <li>
-                                            <a href="{{ $cat->url() }}">{{ $cat->title }}</a>
-                                            <ul style="margin-left: 20px;">
-                                                @foreach($cat->children as $child)
-                                                    <li><a href="{{ $child->url() }}">{{ $child->title }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="catalog">
+                        <div class="catalog-title">Категории</div>
+                        <ul class="catalog-list">
+                            @foreach($cats as $cat)
+                                @if($cat->hasChildren())
+                                    <li>
+                                        <a class="m-link" href="{{ $cat->url() }}">{{ $cat->title }}</a>
+                                        <ul class="ul-child-items">
+                                            @foreach($cat->children as $child)
+                                                <li><a class="m-link-c" href="{{ $child->url() }}">{{ $child->title }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
+                                @endif
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div id="navigation">
                     <ul>
                         <li><a href="{{ route('home') }}">Главная</a></li>
