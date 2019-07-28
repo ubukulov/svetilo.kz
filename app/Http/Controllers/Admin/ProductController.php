@@ -64,7 +64,7 @@ class ProductController extends Controller
                 $save_path_thumbs = base_path('public/'.$this->imagePathThumbs.$dir);
 
                 if (!file_exists($save_path_thumbs)) {
-                    mkdir($save_path_thumbs, 777, true);
+                    mkdir($save_path_thumbs, 755, true);
                 }
 
                 $img->resize(180, 180)->save($save_path_thumbs.'/'.$file_name);
@@ -135,7 +135,7 @@ class ProductController extends Controller
                 $save_path_thumbs = base_path('public/'.$this->imagePathThumbs.$dir);
 
                 if (!file_exists($save_path_thumbs)) {
-                    mkdir($save_path_thumbs, 777, true);
+                    mkdir($save_path_thumbs, 755, true);
                 }
 
                 $img->resize(180, 180)->save($save_path_thumbs.'/'.$file_name);
