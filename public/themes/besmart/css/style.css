@@ -83,7 +83,7 @@ textarea {
 	left:0;
 }
 #header {
-	background:url(images/header-bg.gif) repeat-x 0 0;
+	/*background:url(images/header-bg.gif) repeat-x 0 0;*/
 	height:109px;
 	position:relative;
 }
