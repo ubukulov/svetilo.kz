@@ -6,9 +6,9 @@
 body {
 	font-size:12px;
 	line-height:20px;
-	font-family:Georgia, Arial, Helvetica, Sans-Serif;
+	font-family:Verdana, Georgia, Arial, Helvetica, Sans-Serif;
 	color:#333;
-	background:url(images/body-bg.gif) repeat 0 0;
+	/*background:url(images/body-bg.gif) repeat 0 0;*/
 }
 a {
 	color:#ff0000;
@@ -52,6 +52,7 @@ textarea {
 .shell {
 	width:1200px;
 	margin:0 auto;
+    max-width: 100%;
 }
 .border {
 	border:1px solid #e8e8e8;
@@ -158,15 +159,15 @@ textarea {
 	text-decoration:none;
 }
 .slider {
-	width:930px;
+	width:860px;
 	height:300px;
 	border:1px solid #dbdbdb;
 	position:relative;
-	margin:25px 0 0 24px;
+	margin: 25px 0;
 }
 .slider .item {
 	position:relative;
-	width:928px;
+	width:860px;
 	height:298px;
 }
 .slider .item img {
@@ -213,7 +214,7 @@ textarea {
 }
 #main {
 	width:1200px;
-	padding:37px 24px 17px 24px;
+	/*padding:37px 24px 17px 24px;*/
 }
 #main h3 {
 	font-size:12px;
@@ -235,7 +236,8 @@ textarea {
 	text-decoration:none;
 }
 #content {
-	width:100%;
+    width:100%;
+    word-break: break-all;
 }
 .highlight h3 {
 	margin:0 0 9px 0;
@@ -332,8 +334,9 @@ textarea {
 	font-family:Arial, sans-serif;
 	font-size:11px;
 	line-height:14px;
-	color:#7f7f7f;
+	color:#fff;
 	padding:18px 27px 20px 38px;
+    background: #424242;
 }
 #footer a {
 	color:#7f7f7f;

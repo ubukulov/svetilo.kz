@@ -364,6 +364,12 @@
                         <span>Заказы</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.filter.index') }}">
+                        <i class="fa fa-laptop"></i>
+                        <span>Фильтры</span>
+                    </a>
+                </li>
                 {{--
                 <li class="treeview">
                     <a href="#">

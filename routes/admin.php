@@ -31,4 +31,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['web
 
     # Orders
     Route::get('/orders', 'OrderController@index')->name('admin.order.index');
+
+    # Filters
+    Route::get('/filters', 'FilterController@index')->name('admin.filter.index');
+    Route::get('/filters/create', 'FilterController@create')->name('admin.filter.create');
+    Route::get('/filters/{id}/edit', 'FilterController@edit')->name('admin.filter.edit');
+    Route::get('/filters/{id}/destroy', 'FilterController@destroy')->name('admin.filter.destroy');
+    Route::post('/filters', 'FilterController@store')->name('admin.filter.store');
+    Route::post('/filters/{id}', 'FilterController@update')->name('admin.filter.update');
 });

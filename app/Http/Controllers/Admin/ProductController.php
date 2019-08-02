@@ -50,26 +50,26 @@ class ProductController extends Controller
                 $img = \Image::make($file->getPathname());
                 $hash_name = md5($file->getClientOriginalName());
                 $file_name = $product->id."_".$hash_name.'.jpg';
-                $dir = substr($hash_name,0,2).'/'.substr($hash_name, 2, 2);
+                //$dir = substr($hash_name,0,2).'/'.substr($hash_name, 2, 2);
 
-                $save_path = base_path('public/'.$this->imagePath.$dir);
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 755, true);
-                }
+                $save_path = base_path('public/'.$this->imagePath);
+//                if (!file_exists($save_path)) {
+//                    mkdir($save_path, 755, true);
+//                }
 
-                $img->save($save_path.'/'.$file_name);
+                $img->save($save_path.$file_name);
 
                 // сохранение миниатюры
 
-                $save_path_thumbs = base_path('public/'.$this->imagePathThumbs.$dir);
+                $save_path_thumbs = base_path('public/'.$this->imagePathThumbs);
 
-                if (!file_exists($save_path_thumbs)) {
-                    mkdir($save_path_thumbs, 755, true);
-                }
+//                if (!file_exists($save_path_thumbs)) {
+//                    mkdir($save_path_thumbs, 755, true);
+//                }
 
-                $img->resize(180, 180)->save($save_path_thumbs.'/'.$file_name);
+                $img->resize(180, 180)->save($save_path_thumbs.$file_name);
 
-                $images[] = $dir.'/'.$file_name;
+                $images[] = $file_name;
             }
 
             $product->images = json_encode($images);
@@ -121,26 +121,26 @@ class ProductController extends Controller
                 $img = \Image::make($file->getPathname());
                 $hash_name = md5($file->getClientOriginalName());
                 $file_name = $product->id."_".$hash_name.'.jpg';
-                $dir = substr($hash_name,0,2).'/'.substr($hash_name, 2, 2);
+                //$dir = substr($hash_name,0,2).'/'.substr($hash_name, 2, 2);
 
-                $save_path = base_path('public/'.$this->imagePath.$dir);
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 755, true);
-                }
+                $save_path = base_path('public/'.$this->imagePath);
+//                if (!file_exists($save_path)) {
+//                    mkdir($save_path, 755, true);
+//                }
 
-                $img->save($save_path.'/'.$file_name);
+                $img->save($save_path.$file_name);
 
                 // сохранение миниатюры
 
-                $save_path_thumbs = base_path('public/'.$this->imagePathThumbs.$dir);
+                $save_path_thumbs = base_path('public/'.$this->imagePathThumbs);
 
-                if (!file_exists($save_path_thumbs)) {
-                    mkdir($save_path_thumbs, 755, true);
-                }
+//                if (!file_exists($save_path_thumbs)) {
+//                    mkdir($save_path_thumbs, 755, true);
+//                }
 
-                $img->resize(180, 180)->save($save_path_thumbs.'/'.$file_name);
+                $img->resize(180, 180)->save($save_path_thumbs.$file_name);
 
-                $images[] = $dir.'/'.$file_name;
+                $images[] = $file_name;
             }
 
             $product->images = json_encode($images);
