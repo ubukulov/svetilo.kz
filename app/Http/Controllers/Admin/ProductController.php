@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Product;
+use App\Models\ProductFilterValue;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Filter;
 
 class ProductController extends Controller
 {
@@ -100,7 +102,13 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $cats = Category::get()->toTree();
-        return view('admin.product.edit', compact('product', 'cats'));
+        $filters = Filter::all();
+        $product_fvs = ProductFilterValue::where(['product_id' => $product->id])->get();
+        $fvs = [];
+        foreach($product_fvs as $fv) {
+            $fvs[$fv->product_filter_value_id] = $fv->product_filter_value_id;
+        }
+        return view('admin.product.edit', compact('product', 'cats', 'filters', 'fvs'));
     }
 
     /**

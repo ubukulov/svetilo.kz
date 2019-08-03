@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class Filter extends Model
+class FilterValue extends Model
 {
     use Sluggable;
 
+    protected $table = 'filter_values';
+
     protected $fillable = [
-        'title', 'alias', 'status'
+        'filter_id', 'title', 'alias', 'status'
     ];
 
     protected $dates = ['created_at', 'updated_at'];
@@ -29,8 +31,8 @@ class Filter extends Model
         ];
     }
 
-    public function values()
+    public function filter()
     {
-        return $this->hasMany('App\Models\FilterValue', 'filter_id');
+        return $this->belongsTo('App\Models\Filter', 'filter_id');
     }
 }

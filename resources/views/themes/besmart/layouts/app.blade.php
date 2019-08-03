@@ -96,6 +96,10 @@
                     </ul>
                 </div>
 
+                @section('filters')
+
+                @show
+
                 <div class="sidebar_contacts">
                     <div class="sd_contact_title sb_title">
                         <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ

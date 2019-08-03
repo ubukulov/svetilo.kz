@@ -151,3 +151,22 @@ header {
     margin-bottom: 30px;
     font-weight: bold;
 }
+.category_filters {
+    padding: 20px 10px;
+}
+.filter-pU {
+    list-style: none;
+    font-size: 16px;
+}
+.filter-pU li {
+    margin-bottom: 15px;
+}
+
+.filter-cU {
+    margin-left: 40px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.filter-cU li {
+    margin-bottom: 0px;
+}

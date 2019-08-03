@@ -6,6 +6,31 @@
         &nbsp;
         {!! $category->title !!}
     </div>
+
+    @section('filters')
+        <div class="category_filters">
+            <div class="filter_title sb_title">
+                <i class="fas fa-filter"></i>&nbsp;ФИЛЬТРЫ
+            </div>
+            <ul class="filter-pU">
+                @foreach($category->getFilters() as $filter)
+                    <li>
+                        {{ $filter->title }}
+                        @if($filter->values)
+                            <ul class="filter-cU">
+                                @foreach($filter->values as $fv)
+                                <li>
+                                    <a href="#">{{ $fv->title }}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endsection
+
     <div class="row">
         @foreach($category->products as $product)
         <div class="col-md-4 column">

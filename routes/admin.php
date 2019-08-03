@@ -39,4 +39,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['web
     Route::get('/filters/{id}/destroy', 'FilterController@destroy')->name('admin.filter.destroy');
     Route::post('/filters', 'FilterController@store')->name('admin.filter.store');
     Route::post('/filters/{id}', 'FilterController@update')->name('admin.filter.update');
+
+    # Filters Values
+    Route::get('/filters_values', 'FilterValueController@index')->name('admin.fv.index');
+    Route::get('/filters_values/create', 'FilterValueController@create')->name('admin.fv.create');
+    Route::get('/filters_values/{id}/edit', 'FilterValueController@edit')->name('admin.fv.edit');
+    Route::get('/filters_values/{id}/destroy', 'FilterValueController@destroy')->name('admin.fv.destroy');
+    Route::post('/filters_values', 'FilterValueController@store')->name('admin.fv.store');
+    Route::post('/filters_values/{id}', 'FilterValueController@update')->name('admin.fv.update');
+
+    # Add Values of Filters to Product
+    Route::post('/filter_values/product', 'AdminController@fv_product')->name('fv_product');
 });

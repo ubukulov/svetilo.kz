@@ -370,6 +370,12 @@
                         <span>Фильтры</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.fv.index') }}">
+                        <i class="fa fa-laptop"></i>
+                        <span>Значение фильтров</span>
+                    </a>
+                </li>
                 {{--
                 <li class="treeview">
                     <a href="#">

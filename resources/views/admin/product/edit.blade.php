@@ -113,6 +113,60 @@
             </section>
         </div>
     </div>
+</div>
+</div>
+
+<div class="box box-default">
+    <div class="box-body">
+        <!-- Row -->
+        <div class="row">
+            <div class="col-md-12">
+                <section class="hk-sec-wrapper">
+                    <h5 class="hk-sec-title">Присвоение фильтров к товаром</h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form action="{{ route('fv_product') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <thead>
+                                                <th>Фильтр</th>
+                                                <th>Значение</th>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($filters as $filter)
+                                                <tr>
+                                                    <td>
+                                                        <input class="form-control" readonly type="text" name="filters[{{ $filter->id }}]" value="{{ $filter->title }}">
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="filter_values[{{ $filter->id }}][]" id="fv_id">
+                                                            <option value="0"></option>
+                                                            @foreach($filter->values as $fv)
+                                                                <option @if(array_key_exists($fv->id, $fvs)) selected @endif value="{{ $fv->id }}">{{ $fv->title }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit" name="fv_add_to_product">Добавить фильтры к товару</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        </div>
+    </div>
+</div>
 @stop
