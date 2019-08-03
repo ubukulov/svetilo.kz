@@ -42,7 +42,7 @@
 
                 <div class="col-md-6">
                     <div class="header-search">
-                        <form action="#" method="post">
+                        <form action="{{ route('search') }}" method="post">
                             @csrf
                             <input type="text" class="form-control search_input" name="search" placeholder="Поиск по каталогу товаров...">
                             <button type="submit" name="search_btn" class="btn btn-primary search_btn">Найти</button>

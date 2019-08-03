@@ -50,3 +50,9 @@ Breadcrumbs::register('checkout.index', function($breadcrumbs) {
     $breadcrumbs->parent('homepage');
     $breadcrumbs->push('Оформление заказа');
 });
+
+// Search
+Breadcrumbs::register('search', function($breadcrumbs) {
+    $breadcrumbs->parent('homepage');
+    $breadcrumbs->push('Результаты поиска');
+});

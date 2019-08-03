@@ -37,3 +37,6 @@ Route::group(['prefix' => 'checkout'], function(){
     Route::get('/', 'CheckoutController@index')->name('checkout.index');
     Route::post('/store', 'CheckoutController@store')->name('checkout.store');
 });
+
+// Search
+Route::post('/search', 'SearchController@index')->name('search');
