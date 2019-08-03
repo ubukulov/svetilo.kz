@@ -86,6 +86,7 @@ class Category extends Model
         $filters = Filter::where('status', '=', 1)
                     ->join('category_filters', 'category_filters.filter_id', '=', 'filters.id')
                     ->select('filters.*')
+                    ->where('category_filters.category_id', $this->id)
                     ->get();
         return $filters;
     }
