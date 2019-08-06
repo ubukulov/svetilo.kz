@@ -80,10 +80,11 @@
                     </div>
                     <ul class="catalog-list">
                         @foreach($cats as $cat)
-                            @if($cat->hasChildren())
+                            @if(count($cat->children) != 0)
                                 <li>
                                     <a class="m-link" href="{{ $cat->url() }}">{{ $cat->title }}</a>
-                                    <ul class="ul-child-items">
+                                    <span class="plus" data-id="{{ $cat->id }}"><i class="fas fa-plus"></i></span>
+                                    <ul class="ul-child-items item{{ $cat->id }}">
                                         @foreach($cat->children as $child)
                                             <li><a class="m-link-c" href="{{ $child->url() }}">{{ $child->title }}</a></li>
                                         @endforeach
@@ -269,5 +270,16 @@
     })();
 </script>
 <!-- /WhatsHelp.io widget -->
+<script type="text/javascript">
+    $('.plus').toggle(function(){
+        var id = $(this).attr('data-id');
+        $('.item'+id).show();
+        $(this).html("<i class='fas fa-minus'></i>");
+    }, function(){
+        var id = $(this).attr('data-id');
+        $('.item'+id).hide();
+        $(this).html("<i class='fas fa-plus'></i>");
+    });
+</script>
 </body>
 </html>
