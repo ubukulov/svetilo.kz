@@ -5,14 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">--}}
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('themes/besmart/css/style.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/media.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ asset('themes/besmart/css/jquery.jcarousel.css') }}" type="text/css" media="all" />
     <!--[if IE 6]><link rel="stylesheet" href="{{ asset('themes/besmart/css/ie6.css') }}" type="text/css" media="all" /><![endif]-->
     <link rel="shortcut icon" href="{{ asset('themes/besmart/css/images/favicon.ico') }}" />
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery-1.4.2.min.js') }}"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>
 </head>
@@ -35,9 +38,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h1 id="logo">
-                        <a href="{{ route('home') }}" class="notext">beSMART</a>
-                    </h1>
+                    <div class="logo">
+                        <h1 id="logo">
+                            <a href="{{ route('home') }}" class="notext">beSMART</a>
+                        </h1>
+                    </div>
                 </div>
 
                 <div class="col-md-6">
@@ -50,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                {{--<div class="col-md-3">
                     <div class="socials right">
                         <ul>
                             @if(Auth::check())
@@ -66,178 +71,189 @@
                             @endif
                         </ul>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>
 
     <div id="content">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="catalog">
-                    <div class="catalog-title sb_title">
-                        <i class="fas fa-bars"></i>&nbsp;КАТАЛОГ
-                    </div>
-                    <ul class="catalog-list">
-                        @foreach($cats as $cat)
-                            @if(count($cat->children) != 0)
-                                <li>
-                                    <a class="m-link" href="{{ $cat->url() }}">{{ $cat->title }}</a>
-                                    <span class="plus" data-id="{{ $cat->id }}"><i class="fas fa-plus"></i></span>
-                                    <ul class="ul-child-items item{{ $cat->id }}">
-                                        @foreach($cat->children as $child)
-                                            <li><a class="m-link-c" href="{{ $child->url() }}">{{ $child->title }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @else
-                                <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
-                            @endif
-                        @endforeach
-                    </ul>
-                </div>
-
-                @section('filters')
-
-                @show
-
-                <div class="sidebar_contacts">
-                    <div class="sd_contact_title sb_title">
-                        <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ
-                    </div>
-
-                    <div class="sb_div">
-                        <span class="sb_div_t">Компания</span><br>
-                        <span>Svetilo.kz</span>
-                    </div>
-
-                    <div class="sb_div">
-                        <span class="sb_div_t">Адрес</span> <br>
-                        <span>г. Алматы, ул. Брусиловского 107Б</span>
-                    </div>
-
-                    <div class="sb_div">
-                        <span class="sb_div_t">Телефоны</span> <br>
-                        <span><a href="tel:+77777941654">+7 777 794 1654</a></span>
-                    </div>
-
-                    <div class="sb_div">
-                        <span class="sb_div_t">Email</span> <br>
-                        <span><a href="mailto:ibraemovm@gmail.com">ibraemovm@gmail.com</a></span>
-                    </div>
-                </div>
-
-                <div class="work_grafic">
-                    <div class="sb_title">
-                        <i class="far fa-calendar-alt"></i>&nbsp;ГРАФИК РАБОТЫ
-                    </div>
-
-                    <ul class="cs-sked__table">
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell"><span class="cs-sked__day">Понедельник</span></div>
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">20:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Вторник</span>
-                            </div><div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">20:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Среда</span>
-                            </div>
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">20:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Четверг</span>
-                            </div><div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">20:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Пятница</span>
-                            </div>
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">20:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Суббота</span>
-                            </div>
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
-                                <span class="cs-sked__time">18:00</span>
-                            </div>
-                        </li>
-                        <li class="cs-sked__row">
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__day">Воскресенье</span>
-                            </div>
-                            <div class="cs-sked__cell">
-                                <span class="cs-sked__time">Выходной</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-                <div id="navigation">
-                    <ul>
-                        <li><a href="{{ route('home') }}">Главная</a></li>
-                        @foreach($pages as $page)
-                            <li><a href="{{ route('page.view', ['alias' => $page->alias]) }}">{{ $page->title }}</a></li>
-                        @endforeach
-                    </ul>
-                    <div class="cl">&nbsp;</div>
-                </div>
-                @if($hasSlider)
-                    <div class="slider">
-                        <div class="slider-nav"> <a href="#" class="left notext">1</a> <a href="#" class="left notext">2</a> <a href="#" class="left notext">3</a> <a href="#" class="left notext">4</a>
-                            <div class="cl">&nbsp;</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="catalog">
+                        <div class="catalog-title sb_title">
+                            <i class="fas fa-bars"></i>&nbsp;КАТАЛОГ
                         </div>
-                        <ul>
-                            <li>
-                                <div class="item">
-                                    <img src="{{ asset('uploads/slider/slide1.jpg') }}" alt="" />
+                        <ul class="catalog-list">
+                            @foreach($cats as $cat)
+                                @if(count($cat->children) != 0)
+                                    <li>
+                                        <a class="m-link" href="{{ $cat->url() }}">{{ $cat->title }}</a>
+                                        <span class="plus" data-id="{{ $cat->id }}"><i class="fas fa-plus"></i></span>
+                                        <ul class="ul-child-items item{{ $cat->id }}">
+                                            @foreach($cat->children as $child)
+                                                <li><a class="m-link-c" href="{{ $child->url() }}">{{ $child->title }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li><a href="{{ $cat->url() }}">{{ $cat->title }}</a></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    @section('filters')
+
+                    @show
+
+                    <div class="sidebar_contacts">
+                        <div class="sd_contact_title sb_title">
+                            <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ
+                        </div>
+
+                        <div class="sb_div">
+                            <span class="sb_div_t">Компания</span><br>
+                            <span>Svetilo.kz</span>
+                        </div>
+
+                        <div class="sb_div">
+                            <span class="sb_div_t">Адрес</span> <br>
+                            <span>г. Алматы, ул. Брусиловского 107Б</span>
+                        </div>
+
+                        <div class="sb_div">
+                            <span class="sb_div_t">Телефоны</span> <br>
+                            <span><a href="tel:+77777941654">+7 777 794 1654</a></span>
+                        </div>
+
+                        <div class="sb_div">
+                            <span class="sb_div_t">Email</span> <br>
+                            <span><a href="mailto:ibraemovm@gmail.com">ibraemovm@gmail.com</a></span>
+                        </div>
+                    </div>
+
+                    <div class="work_grafic">
+                        <div class="sb_title">
+                            <i class="far fa-calendar-alt"></i>&nbsp;ГРАФИК РАБОТЫ
+                        </div>
+
+                        <ul class="cs-sked__table">
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell"><span class="cs-sked__day">Понедельник</span></div>
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">20:00</span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="item">
-                                    <img src="{{ asset('uploads/slider/slide2.jpg') }}" alt="" />
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Вторник</span>
+                                </div><div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">20:00</span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="item">
-                                    <img src="{{ asset('uploads/slider/slide3.jpg') }}" alt="" />
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Среда</span>
+                                </div>
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">20:00</span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="item">
-                                    <img src="{{ asset('uploads/slider/slide4.jpg') }}" alt="" />
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Четверг</span>
+                                </div><div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">20:00</span>
+                                </div>
+                            </li>
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Пятница</span>
+                                </div>
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">20:00</span>
+                                </div>
+                            </li>
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Суббота</span>
+                                </div>
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                                    <span class="cs-sked__time">18:00</span>
+                                </div>
+                            </li>
+                            <li class="cs-sked__row">
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__day">Воскресенье</span>
+                                </div>
+                                <div class="cs-sked__cell">
+                                    <span class="cs-sked__time">Выходной</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                @endif
+                </div>
 
-                <div id="main" style="width: 100%;">
-                    <div id="content" class="left" style="padding-bottom: 20px; margin-top: 10px;">
-                        @yield('content')
+                <div class="col-md-9">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ route('home') }}">Главная <span class="sr-only">(current)</span></a>
+                                </li>
+                                @foreach($pages as $page)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('page.view', ['alias' => $page->alias]) }}">{{ $page->title }}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </nav>
+                    @if($hasSlider)
+                        <div class="slider">
+                            <div class="slider-nav"> <a href="#" class="left notext">1</a> <a href="#" class="left notext">2</a> <a href="#" class="left notext">3</a> <a href="#" class="left notext">4</a>
+                                <div class="cl">&nbsp;</div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/slider/slide1.jpg') }}" alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/slider/slide2.jpg') }}" alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/slider/slide3.jpg') }}" alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/slider/slide4.jpg') }}" alt="" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div id="main" style="width: 100%;">
+                        <div id="content" class="left" style="padding-bottom: 20px; margin-top: 10px;">
+                            @yield('content')
+                        </div>
                     </div>
                 </div>
             </div>

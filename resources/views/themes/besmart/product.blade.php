@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8">
             <h4>{{ $product->title }}</h4> <br>
-            <img style="max-width: 600px; max-height: 400px;" src="{{ $product->image() }}" title="{{ $product->title }}" alt="{{ $product->title }}">
+            <img class="product-im" src="{{ $product->image() }}" title="{{ $product->title }}" alt="{{ $product->title }}">
 
             <hr>
             <div class="row">

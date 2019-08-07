@@ -70,8 +70,8 @@
                 </div>
 
                 <div class="product-cart">
-                    <a href="{{ route('cart.add', ['product_id' => $product->id]) }}" style="font-size: 14px;" class="btn btn-danger"><i class="fa fa-shopping-cart"></i>&nbsp; Купить</a>
-                    <a href="{{ url('/cart/add/'.$product->id.'/return') }}" style="font-size: 14px;" class="btn btn-danger"><i></i>&nbsp; В корзину</a>
+                    <a href="{{ route('cart.add', ['product_id' => $product->id]) }}" style="font-size: 13px;" class="btn btn-danger"><i class="fa fa-shopping-cart"></i>&nbsp; Купить</a>
+                    <a href="{{ url('/cart/add/'.$product->id.'/return') }}" style="font-size: 13px;" class="btn btn-danger"><i></i>&nbsp; В корзину</a>
                 </div>
             </div>
         </div>
