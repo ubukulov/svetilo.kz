@@ -14,10 +14,18 @@
     <!--[if IE 6]><link rel="stylesheet" href="{{ asset('themes/besmart/css/ie6.css') }}" type="text/css" media="all" /><![endif]-->
     <link rel="shortcut icon" href="{{ asset('themes/besmart/css/images/favicon.ico') }}" />
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery-1.4.2.min.js') }}"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>--}}
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>
+
+    <!-- RedConnect -->
+    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+            src="https://web.redhelper.ru/service/main.js?c=kairatubukulov"></script>
+    <div style="display: none"><a class="rc-copyright"
+                                  href="http://redconnect.ru">Сервис звонка с сайта RedConnect</a></div>
+    <!--/RedConnect -->
 </head>
 <body>
 <div class="shell">
@@ -53,6 +61,30 @@
                             <button type="submit" name="search_btn" class="btn btn-primary search_btn">Найти</button>
                         </form>
                     </div>
+                </div>
+
+                <div class="col-md-3">
+                    @if($agent->isMobile())
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <a class="navbar-brand" href="#">Меню</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{ route('home') }}">Главная <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    @foreach($pages as $page)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('page.view', ['alias' => $page->alias]) }}">{{ $page->title }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </nav>
+                    @endif
                 </div>
 
                 {{--<div class="col-md-3">
@@ -107,6 +139,7 @@
 
                     @show
 
+                    @if($agent->isDesktop())
                     <div class="sidebar_contacts">
                         <div class="sd_contact_title sb_title">
                             <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ
@@ -199,9 +232,11 @@
                             </li>
                         </ul>
                     </div>
+                    @endif
                 </div>
 
                 <div class="col-md-9">
+                    @if($agent->isDesktop())
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -220,6 +255,8 @@
                             </ul>
                         </div>
                     </nav>
+                    @endif
+
                     @if($hasSlider)
                         <div class="slider">
                             <div class="slider-nav"> <a href="#" class="left notext">1</a> <a href="#" class="left notext">2</a> <a href="#" class="left notext">3</a> <a href="#" class="left notext">4</a>
@@ -276,7 +313,7 @@
             greeting_message: "Здравствуйте! Отправьте нам сообщение через любой из мессенджеров.", // Text of greeting message
             call_to_action: "Напишите нам", // Call to action
             button_color: "#A8CE50", // Color of button
-            position: "right", // Position may be 'right' or 'left'
+            position: "left", // Position may be 'right' or 'left'
             order: "whatsapp,call", // Order of buttons
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;

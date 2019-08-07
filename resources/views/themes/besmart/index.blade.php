@@ -22,4 +22,99 @@
         </div>
         @endforeach
     </div>
+
+    @if($agent->isMobile())
+        <div class="sidebar_contacts">
+            <div class="sd_contact_title sb_title">
+                <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ
+            </div>
+
+            <div class="sb_div">
+                <span class="sb_div_t">Компания</span><br>
+                <span>Svetilo.kz</span>
+            </div>
+
+            <div class="sb_div">
+                <span class="sb_div_t">Адрес</span> <br>
+                <span>г. Алматы, ул. Брусиловского 107Б</span>
+            </div>
+
+            <div class="sb_div">
+                <span class="sb_div_t">Телефоны</span> <br>
+                <span><a href="tel:+77777941654">+7 777 794 1654</a></span>
+            </div>
+
+            <div class="sb_div">
+                <span class="sb_div_t">Email</span> <br>
+                <span><a href="mailto:ibraemovm@gmail.com">ibraemovm@gmail.com</a></span>
+            </div>
+        </div>
+
+        <div class="work_grafic">
+            <div class="sb_title">
+                <i class="far fa-calendar-alt"></i>&nbsp;ГРАФИК РАБОТЫ
+            </div>
+
+            <ul class="cs-sked__table">
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell"><span class="cs-sked__day">Понедельник</span></div>
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">20:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Вторник</span>
+                    </div><div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">20:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Среда</span>
+                    </div>
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">20:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Четверг</span>
+                    </div><div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">20:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Пятница</span>
+                    </div>
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">20:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Суббота</span>
+                    </div>
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__time">09:00</span>&nbsp;-&nbsp;
+                        <span class="cs-sked__time">18:00</span>
+                    </div>
+                </li>
+                <li class="cs-sked__row">
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__day">Воскресенье</span>
+                    </div>
+                    <div class="cs-sked__cell">
+                        <span class="cs-sked__time">Выходной</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    @endif
 @stop
