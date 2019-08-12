@@ -19,13 +19,6 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>
-
-    <!-- RedConnect -->
-    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
-            src="https://web.redhelper.ru/service/main.js?c=kairatubukulov"></script>
-    <div style="display: none"><a class="rc-copyright"
-                                  href="http://redconnect.ru">Сервис звонка с сайта RedConnect</a></div>
-    <!--/RedConnect -->
 </head>
 <body>
 <div class="shell">
@@ -313,7 +306,7 @@
             greeting_message: "Здравствуйте! Отправьте нам сообщение через любой из мессенджеров.", // Text of greeting message
             call_to_action: "Напишите нам", // Call to action
             button_color: "#A8CE50", // Color of button
-            position: "left", // Position may be 'right' or 'left'
+            position: "right", // Position may be 'right' or 'left'
             order: "whatsapp,call", // Order of buttons
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
