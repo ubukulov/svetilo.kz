@@ -10,15 +10,18 @@
     <link rel="stylesheet" href="{{ asset('themes/besmart/css/style.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ asset('css/media.css') }}" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{ asset('themes/besmart/css/jquery.jcarousel.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
+    {{--<link rel="stylesheet" href="{{ asset('themes/besmart/css/jquery.jcarousel.css') }}" type="text/css" media="all" />--}}
     <!--[if IE 6]><link rel="stylesheet" href="{{ asset('themes/besmart/css/ie6.css') }}" type="text/css" media="all" /><![endif]-->
     <link rel="shortcut icon" href="{{ asset('themes/besmart/css/images/favicon.ico') }}" />
-    <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery-1.4.2.min.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery-1.4.2.min.js') }}"></script>--}}
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>--}}
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.js') }}"></script>
 </head>
 <body>
 <div class="shell">
@@ -58,11 +61,13 @@
 
                 <div class="col-md-3">
                     @if($agent->isMobile())
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 60px;">
                             <a class="navbar-brand" href="#">Меню</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button style="display: block" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
+                            <input type="hidden" id="toggle_ht" value="0">
 
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
@@ -105,6 +110,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
+                    @if($agent->isDesktop())
                     <div class="catalog">
                         <div class="catalog-title sb_title">
                             <i class="fas fa-bars"></i>&nbsp;КАТАЛОГ
@@ -132,7 +138,6 @@
 
                     @show
 
-                    @if($agent->isDesktop())
                     <div class="sidebar_contacts">
                         <div class="sd_contact_title sb_title">
                             <i class="fas fa-address-book"></i>&nbsp;КОНТАКТЫ
@@ -252,31 +257,18 @@
 
                     @if($hasSlider)
                         <div class="slider">
-                            <div class="slider-nav"> <a href="#" class="left notext">1</a> <a href="#" class="left notext">2</a> <a href="#" class="left notext">3</a> <a href="#" class="left notext">4</a>
-                                <div class="cl">&nbsp;</div>
+                            <div class="item">
+                                <img src="{{ asset('uploads/slider/slide1.jpg') }}" alt="" />
                             </div>
-                            <ul>
-                                <li>
-                                    <div class="item">
-                                        <img src="{{ asset('uploads/slider/slide1.jpg') }}" alt="" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item">
-                                        <img src="{{ asset('uploads/slider/slide2.jpg') }}" alt="" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item">
-                                        <img src="{{ asset('uploads/slider/slide3.jpg') }}" alt="" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item">
-                                        <img src="{{ asset('uploads/slider/slide4.jpg') }}" alt="" />
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="item">
+                                <img src="{{ asset('uploads/slider/slide2.jpg') }}" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('uploads/slider/slide3.jpg') }}" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('uploads/slider/slide4.jpg') }}" alt="" />
+                            </div>
                         </div>
                     @endif
 
@@ -325,6 +317,31 @@
         var id = $(this).attr('data-id');
         $('.item'+id).hide();
         $(this).html("<i class='fas fa-plus'></i>");
+    });
+    /*$('.navbar-toggler').toggle(function(){
+        $('.slider').css({'margin-top' : '200px'});
+    }, function(){
+        $('.slider').css({'margin-top' : '0px'});
+    });*/
+    $('.navbar-toggler').click(function(){
+        var toggle_ht = $('#toggle_ht').val();
+        if (toggle_ht == 0) {
+            $('.slider').css({'margin-top' : '200px'});
+            $('#toggle_ht').val(1);
+        } else {
+            $('.slider').css({'margin-top' : '0px'});
+            $('#toggle_ht').val(0);
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider').slick({
+            autoplay: true,
+            arrows : false,
+            dots : true,
+        });
     });
 </script>
 </body>
