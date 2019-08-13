@@ -286,6 +286,12 @@
         <p class="left">Svetilo.kz &copy; 2019. Все правы защищены</p>
         <div class="cl"></div>
     </div>
+
+    <div class="whatsapp" style="bottom: 53px; left: 20px; position: fixed;">
+        <a href="tel:+77777941654">
+            <img src="img/call.png" width="63">
+        </a>
+    </div>
 </div>
 {{--<script src="//code.jivosite.com/widget.js" jv-id="1QZp71yzLz" async></script>--}}
 <!-- WhatsHelp.io widget -->
@@ -323,7 +329,7 @@
     }, function(){
         $('.slider').css({'margin-top' : '0px'});
     });*/
-    $('.navbar-toggler').click(function(){
+    /*$('.navbar-toggler').click(function(){
         var toggle_ht = $('#toggle_ht').val();
         if (toggle_ht == 0) {
             $('.slider').css({'margin-top' : '200px'});
@@ -332,7 +338,7 @@
             $('.slider').css({'margin-top' : '0px'});
             $('#toggle_ht').val(0);
         }
-    });
+    });*/
 </script>
 
 <script type="text/javascript">
