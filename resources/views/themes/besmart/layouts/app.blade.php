@@ -324,12 +324,7 @@
         $('.item'+id).hide();
         $(this).html("<i class='fas fa-plus'></i>");
     });
-    /*$('.navbar-toggler').toggle(function(){
-        $('.slider').css({'margin-top' : '200px'});
-    }, function(){
-        $('.slider').css({'margin-top' : '0px'});
-    });*/
-    /*$('.navbar-toggler').click(function(){
+    $('.navbar-toggler').click(function(){
         var toggle_ht = $('#toggle_ht').val();
         if (toggle_ht == 0) {
             $('.slider').css({'margin-top' : '200px'});
@@ -338,7 +333,7 @@
             $('.slider').css({'margin-top' : '0px'});
             $('#toggle_ht').val(0);
         }
-    });*/
+    });
 </script>
 
 <script type="text/javascript">
