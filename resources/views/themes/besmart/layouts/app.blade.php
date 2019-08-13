@@ -289,7 +289,7 @@
 
     <div class="whatsapp" style="bottom: 80px; right: 20px; position: fixed;">
         <a href="tel:+77777941654">
-            <img src="img/call.png" width="53">
+            <img src="{{ asset('img/call.png') }}" width="53">
         </a>
     </div>
 </div>
