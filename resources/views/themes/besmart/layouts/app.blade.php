@@ -19,8 +19,8 @@
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ asset('themes/besmart/js/jquery.jcarousel.pack.js') }}"></script>--}}
+{{--    <script type="text/javascript" src="{{ asset('themes/besmart/js/func.js') }}"></script>--}}
     <script type="text/javascript" src="{{ asset('js/slick.js') }}"></script>
 </head>
 <body>
@@ -61,22 +61,20 @@
 
                 <div class="col-md-3">
                     @if($agent->isMobile())
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 60px;">
+                        <nav class="navbar navbar-expand-md navbar-light bg-light" style="margin-top: 60px;">
                             <a class="navbar-brand" href="#">Меню</a>
-                            <button style="display: block" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button style="display: block;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-
-                            <input type="hidden" id="toggle_ht" value="0">
 
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ route('home') }}">Главная <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="{{ route('home') }}">Главная <span class="sr-only">(current)</span></a>
                                     </li>
                                     @foreach($pages as $page)
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('page.view', ['alias' => $page->alias]) }}">{{ $page->title }}</a>
+                                            <a class="nav-link"  href="{{ route('page.view', ['alias' => $page->alias]) }}">{{ $page->title }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -315,16 +313,12 @@
 </script>
 <!-- /WhatsHelp.io widget -->
 <script type="text/javascript">
-    $('.plus').toggle(function(){
+    $('.plus').click(function() {
         var id = $(this).attr('data-id');
-        $('.item'+id).show();
-        $(this).html("<i class='fas fa-minus'></i>");
-    }, function(){
-        var id = $(this).attr('data-id');
-        $('.item'+id).hide();
-        $(this).html("<i class='fas fa-plus'></i>");
+        $(this).siblings(".item"+id).toggle();
     });
-    $('.navbar-toggler').click(function(){
+
+    /*$('.navbar-toggler').click(function(){
         var toggle_ht = $('#toggle_ht').val();
         if (toggle_ht == 0) {
             $('.slider').css({'margin-top' : '200px'});
@@ -333,6 +327,9 @@
             $('.slider').css({'margin-top' : '0px'});
             $('#toggle_ht').val(0);
         }
+    });*/
+    $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
     });
 </script>
 
