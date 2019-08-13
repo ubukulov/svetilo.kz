@@ -287,9 +287,9 @@
         <div class="cl"></div>
     </div>
 
-    <div class="whatsapp" style="bottom: 60px; right: 20px; position: fixed;">
+    <div class="whatsapp" style="bottom: 80px; right: 20px; position: fixed;">
         <a href="tel:+77777941654">
-            <img src="img/call.png" width="43">
+            <img src="img/call.png" width="53">
         </a>
     </div>
 </div>
