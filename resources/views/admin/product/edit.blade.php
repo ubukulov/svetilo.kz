@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <form action="{{ route('admin.product.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="_method" value="PUT">
+                            {{--<input type="hidden" name="_method" value="PUT">--}}
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
