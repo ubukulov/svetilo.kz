@@ -23,7 +23,13 @@
                                         <label for="category_id">Выберите категорию</label>
                                         <select name="category_id" class="form-control custom-select d-block w-100" id="category_id">
                                             @foreach($cats as $cat)
+                                                @if(count($cat->children) != 0)
+                                                    @foreach($cat->children as $child)
+                                                    <option @if($product->category_id == $child->id) selected @endif value="{{ $child->id }}">------{{ $child->title }}</option>
+                                                    @endforeach
+                                                @else
                                                 <option @if($product->category_id == $cat->id) selected @endif value="{{ $cat->id }}">{{ $cat->title }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
