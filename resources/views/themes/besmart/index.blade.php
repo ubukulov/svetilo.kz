@@ -66,6 +66,10 @@
                 <span class="sb_div_t">Адрес</span> <br>
                 <span>г. Алматы, ул. Брусиловского 107Б</span>
             </div>
+			
+			<div class="sb_div">
+				<iframe src="https://yandex.kz/map-widget/v1/-/CChuj2iX" style="width: 100%;" height="200" frameborder="1" allowfullscreen="true"></iframe>
+			</div>
 
             <div class="sb_div">
                 <span class="sb_div_t">Телефоны</span> <br>
